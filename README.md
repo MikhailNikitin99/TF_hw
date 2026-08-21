@@ -63,4 +63,16 @@ resource "docker_image" "nginx" {
 keep_locally (Boolean) If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
 ```
 
+## Задание 2  
+### [код в main.tf](https://github.com/MikhailNikitin99/TF_hw/blob/main/main.tf)  
+Вывод <b>env</b> с контейнера MySQL:  
+<img width="890" height="472" alt="задание с бд" src="https://github.com/user-attachments/assets/be65c2ef-69f3-4207-a652-e858eaed9520" />  
+
+## Задание 3
+Вариант с Opentofu (для доступа к зеркалу создал .tofurc ):  
+<img width="793" height="779" alt="вариант с opentofu" src="https://github.com/user-attachments/assets/346079df-7af0-45c7-b21e-13d5d9d6f168" />  
+
+
+
+
 
