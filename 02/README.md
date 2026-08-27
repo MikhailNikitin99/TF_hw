@@ -13,23 +13,23 @@
 ```core_fraction = 5``` в основном помогает в экономии средств, плюс для учебных задач (nginx, скрипты, терраформ) много цпу и не нужно.  
 
 ## Задание 2  
-Все в [main.ft]() и [variables.tf]()  
+Все в [main.ft](https://github.com/MikhailNikitin99/TF_hw/blob/main/02/main.tf) и [variables.tf](https://github.com/MikhailNikitin99/TF_hw/blob/main/02/variables.tf)  
 
 #### После добавления переменных:  
 <img width="1058" height="591" alt="Добавил переменые" src="https://github.com/user-attachments/assets/3f33353f-6ade-453b-9405-8348185fffa7" />  
 
 ## Задание 3
-[vms_platform.tf]()
+[vms_platform.tf](https://github.com/MikhailNikitin99/TF_hw/blob/main/02/vms_platform.tf)
 
 ## Задание 4
 #### Вывод ```terrafrom output```:  
 <img width="925" height="377" alt="tf_output" src="https://github.com/user-attachments/assets/071dd99c-9325-487e-bf4a-b6e491747d66" />  
 
 ## Задание 5
-[local.tf]()  
+[local.tf](https://github.com/MikhailNikitin99/TF_hw/blob/main/02/locals.tf)  
   
 ## Задание 6  
-Блок ```VM resources``` в [variables.tf]() и значения в [terraform.tfvars]()  
+Блок ```VM resources``` в [variables.tf](https://github.com/MikhailNikitin99/TF_hw/blob/main/02/variables.tf) и значения в [terraform.tfvars]()  
 
 ## Задание 7  
 #### Команды и вывод из terraform console
