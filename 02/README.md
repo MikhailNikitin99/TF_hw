@@ -45,6 +45,13 @@ variable "test" {
 ```
 
 ## Задание 9  
+<img width="1084" height="661" alt="карта сети" src="https://github.com/user-attachments/assets/a9118a4f-f400-4372-892e-35e89f2a238a" />  
+
+<img width="1032" height="523" alt="web_vm_nat" src="https://github.com/user-attachments/assets/6e7cd02a-02f4-47c3-b315-bea017b1437a" />  
+
+<img width="1035" height="542" alt="db_vm_nat" src="https://github.com/user-attachments/assets/f708cf21-ceec-4608-81ea-b9ae4b076de3" />
+
+
 
 
 
