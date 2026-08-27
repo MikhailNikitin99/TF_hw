@@ -29,7 +29,7 @@
 [local.tf](https://github.com/MikhailNikitin99/TF_hw/blob/main/02/locals.tf)  
   
 ## Задание 6  
-Блок ```VM resources``` в [variables.tf](https://github.com/MikhailNikitin99/TF_hw/blob/main/02/variables.tf) и значения в [terraform.tfvars]()  
+Блок ```VM resources``` в [variables.tf](https://github.com/MikhailNikitin99/TF_hw/blob/main/02/variables.tf) и значения в [terraform.tfvars](https://github.com/MikhailNikitin99/TF_hw/blob/main/02/terraform.tfvars)  
 
 ## Задание 7  
 #### Команды и вывод из terraform console
