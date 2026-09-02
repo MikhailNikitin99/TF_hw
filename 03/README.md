@@ -10,7 +10,13 @@
 
 ### 2.2  
 <img width="743" height="743" alt="2 2 код" src="https://github.com/user-attachments/assets/ad8aaceb-0b38-4584-a8bd-fbc8f5e9c250" />  
+  
+### 2.3 
+[count-vm.tf]()  
 
+### 2.4  
+[locals.tf]()  
+  
 ### Итог 2 задания
 <img width="1360" height="241" alt="2 pflfybt" src="https://github.com/user-attachments/assets/27016a25-dbc3-4efa-940e-7ce2bf90fcae" />
 
