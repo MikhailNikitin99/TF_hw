@@ -18,7 +18,17 @@
 [locals.tf]()  
   
 ### Итог 2 задания
-<img width="1360" height="241" alt="2 pflfybt" src="https://github.com/user-attachments/assets/27016a25-dbc3-4efa-940e-7ce2bf90fcae" />
+<img width="1360" height="241" alt="2 pflfybt" src="https://github.com/user-attachments/assets/27016a25-dbc3-4efa-940e-7ce2bf90fcae" />  
+
+## Задание 3  
+[disk_vm.tf]()
+### Диски  
+<img width="939" height="385" alt="3 задание_диски" src="https://github.com/user-attachments/assets/9a077c22-6223-4975-bb9e-aea609e595de" />  
+
+### ВМ "storage" + диски  
+<img width="903" height="424" alt="3 задание_диски+вм" src="https://github.com/user-attachments/assets/be08f591-9868-4ff4-b501-9d14e4ddc745" />
+
+
 
 
 
