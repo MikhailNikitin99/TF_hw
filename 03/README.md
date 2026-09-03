@@ -28,6 +28,24 @@
 ### ВМ "storage" + диски  
 <img width="903" height="424" alt="3 задание_диски+вм" src="https://github.com/user-attachments/assets/be08f591-9868-4ff4-b501-9d14e4ddc745" />
 
+## Задание 4
+### [Шаблон]()  
+<img width="1147" height="369" alt="4 задание_шаблон" src="https://github.com/user-attachments/assets/9ef39c79-c3b8-42f8-a37f-11849cfc4507" />  
+
+### hosts.ini  
+<img width="1064" height="448" alt="4 задание" src="https://github.com/user-attachments/assets/33ac9faa-8469-4cb2-a675-6fe873ca6b0c" />  
+
+## Задание 5
+<img width="908" height="779" alt="5 задание" src="https://github.com/user-attachments/assets/7c15896d-cc90-4fae-9331-a9bc6b5dfc33" />  
+  
+### Outputs.tf  
+<img width="815" height="636" alt="5 задание_код" src="https://github.com/user-attachments/assets/9cbd7c3d-d306-4e7d-90b1-142c276aee23" />  
+
+
+
+
+
+
 
 
 
