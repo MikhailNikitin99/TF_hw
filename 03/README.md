@@ -12,7 +12,7 @@
 <img width="743" height="743" alt="2 2 код" src="https://github.com/user-attachments/assets/ad8aaceb-0b38-4584-a8bd-fbc8f5e9c250" />  
   
 ### 2.3 
-[count-vm.tf]()  
+[count-vm.tf](https://github.com/MikhailNikitin99/TF_hw/blob/main/03/count-vm.tf)  
 
 ### 2.4  
 [locals.tf]()  
@@ -21,7 +21,7 @@
 <img width="1360" height="241" alt="2 pflfybt" src="https://github.com/user-attachments/assets/27016a25-dbc3-4efa-940e-7ce2bf90fcae" />  
 
 ## Задание 3  
-[disk_vm.tf]()
+[disk_vm.tf](https://github.com/MikhailNikitin99/TF_hw/blob/main/03/disk_vm.tf)
 ### Диски  
 <img width="939" height="385" alt="3 задание_диски" src="https://github.com/user-attachments/assets/9a077c22-6223-4975-bb9e-aea609e595de" />  
 
@@ -29,7 +29,7 @@
 <img width="903" height="424" alt="3 задание_диски+вм" src="https://github.com/user-attachments/assets/be08f591-9868-4ff4-b501-9d14e4ddc745" />
 
 ## Задание 4
-### [Шаблон]()  
+### [Шаблон](https://github.com/MikhailNikitin99/TF_hw/blob/main/03/hosts.tftpl)  
 <img width="1147" height="369" alt="4 задание_шаблон" src="https://github.com/user-attachments/assets/9ef39c79-c3b8-42f8-a37f-11849cfc4507" />  
 
 ### hosts.ini  
