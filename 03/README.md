@@ -41,6 +41,15 @@
 ### Outputs.tf  
 <img width="815" height="636" alt="5 задание_код" src="https://github.com/user-attachments/assets/9cbd7c3d-d306-4e7d-90b1-142c276aee23" />  
 
+## Задание 6
+[ansible.tf](https://github.com/MikhailNikitin99/TF_hw/blob/main/03/ansible.tf)  
+[hosts.tftpl](https://github.com/MikhailNikitin99/TF_hw/blob/main/03/hosts.tftpl)  
+
+## Задание 7  
+<img width="1575" height="146" alt="7 задание" src="https://github.com/user-attachments/assets/b4e2d06d-0d88-4d67-ba4e-7e03add76490" />  
+
+
+
 
 
 
