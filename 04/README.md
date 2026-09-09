@@ -12,6 +12,25 @@
 ### Terraform console
 <img width="540" height="878" alt="1 5вм" src="https://github.com/user-attachments/assets/d050dde4-18c0-4932-9e62-23cbc451a809" />  
 
+## Задание 2
+[Модуль vpc]()  
+### Вывод в консоли  
+<img width="546" height="599" alt="2 задание" src="https://github.com/user-attachments/assets/6395ef7d-19e3-44f1-911a-e2fa63bd6fb8" />  
+
+### [Замена ресурсов]()  
+
+### [Документация Terraform-docs]()  
+
+### Задание 3  
+## Удалил все
+<img width="1500" height="752" alt="3удалил все" src="https://github.com/user-attachments/assets/8a5f8d6e-d8f0-4bd7-b6c0-db2032648f0c" />  
+
+## Terraform plan после импорта обратно  
+<img width="864" height="795" alt="3импортировал все" src="https://github.com/user-attachments/assets/131d85d9-a21e-4ad9-bc01-a0adcaad8488" />
+
+
+
+
 
 
 
