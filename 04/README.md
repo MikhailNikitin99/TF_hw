@@ -66,7 +66,9 @@
 <img width="1203" height="295" alt="6 создание бакета" src="https://github.com/user-attachments/assets/2cb0dd75-c1d8-4773-a70f-00839ee9d8a0" />  
 
 <img width="1068" height="608" alt="6 задание переподнял, изменил размер" src="https://github.com/user-attachments/assets/20218e1a-a4f7-4dc9-b3fa-b5a2fb012e42" />  
+  
 ### В клауде  
+  
 <img width="1033" height="220" alt="6 задание бакет в клауде" src="https://github.com/user-attachments/assets/f27f6a77-d0f1-42ff-b4ec-11ffcbd55ab9" />
 
 
