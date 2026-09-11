@@ -21,12 +21,26 @@
 
 ### [Документация Terraform-docs]()  
 
-### Задание 3  
-## Удалил все
+## Задание 3  
+### Удалил все
 <img width="1500" height="752" alt="3удалил все" src="https://github.com/user-attachments/assets/8a5f8d6e-d8f0-4bd7-b6c0-db2032648f0c" />  
 
-## Terraform plan после импорта обратно  
-<img width="864" height="795" alt="3импортировал все" src="https://github.com/user-attachments/assets/131d85d9-a21e-4ad9-bc01-a0adcaad8488" />
+### Terraform plan после импорта обратно  
+<img width="864" height="795" alt="3импортировал все" src="https://github.com/user-attachments/assets/131d85d9-a21e-4ad9-bc01-a0adcaad8488" />  
+
+## Задание 4  
+### Сам модуль
+[vpc]()  
+
+### Карта сети после terraform apply  
+<img width="1010" height="378" alt="4 задание карта" src="https://github.com/user-attachments/assets/74ecc0e4-bea6-40d9-8a53-6d7d5024be02" />  
+
+### Сети  
+<img width="1370" height="463" alt="4 сети" src="https://github.com/user-attachments/assets/096bba9e-8e59-4949-b004-3c09c4086cef" />  
+
+### Terraform console > module.vpc  
+<img width="468" height="642" alt="4 вывод в консоли модуля" src="https://github.com/user-attachments/assets/1894cf90-630a-46f9-9d29-453959456852" />  
+
 
 
 
