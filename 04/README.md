@@ -58,7 +58,21 @@
 <img width="1659" height="222" alt="5 5" src="https://github.com/user-attachments/assets/43f54b45-d8e3-41cd-ac55-b4531f2e05c5" />  
   
 <img width="1736" height="237" alt="5 6" src="https://github.com/user-attachments/assets/8d92e4fe-f339-4d93-80b7-a56c4792616a" />  
-  
+
+## Задание 6
+### Потом поменял размер с 1кб на 1 Гб
+<img width="714" height="225" alt="6 задание код бакета" src="https://github.com/user-attachments/assets/bf10df78-7557-4cb3-bf8a-6edba115fd45" />    
+<img width="729" height="786" alt="6 создание бакета 0 1" src="https://github.com/user-attachments/assets/b28b423f-b081-40a6-b410-8cdb5a8eb028" />  
+<img width="1203" height="295" alt="6 создание бакета" src="https://github.com/user-attachments/assets/2cb0dd75-c1d8-4773-a70f-00839ee9d8a0" />  
+
+<img width="1068" height="608" alt="6 задание переподнял, изменил размер" src="https://github.com/user-attachments/assets/20218e1a-a4f7-4dc9-b3fa-b5a2fb012e42" />  
+### В клауде  
+<img width="1033" height="220" alt="6 задание бакет в клауде" src="https://github.com/user-attachments/assets/f27f6a77-d0f1-42ff-b4ec-11ffcbd55ab9" />
+
+
+
+
+
 
 
 
