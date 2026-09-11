@@ -41,6 +41,28 @@
 ### Terraform console > module.vpc  
 <img width="468" height="642" alt="4 вывод в консоли модуля" src="https://github.com/user-attachments/assets/1894cf90-630a-46f9-9d29-453959456852" />  
 
+## Задание 5 
+### Модули
+[Кластер](), [База данных]()  
+
+### Terraform apply  
+<img width="892" height="750" alt="5 1" src="https://github.com/user-attachments/assets/638c3317-b0aa-469d-8b20-62573653b17f" />  
+
+<img width="802" height="731" alt="5 2" src="https://github.com/user-attachments/assets/f49de0bc-cd94-4ca9-993d-67142210b16e" />  
+
+<img width="789" height="740" alt="5 3" src="https://github.com/user-attachments/assets/8021e27a-5ec0-4f4e-8d0c-1c0347e7b410" />  
+
+<img width="803" height="561" alt="5 4" src="https://github.com/user-attachments/assets/3c7b8b10-9f07-4a76-b255-5f2230b7d623" />  
+
+### В самом клауде (вариант с двумя хостами)  
+<img width="1659" height="222" alt="5 5" src="https://github.com/user-attachments/assets/43f54b45-d8e3-41cd-ac55-b4531f2e05c5" />  
+  
+<img width="1736" height="237" alt="5 6" src="https://github.com/user-attachments/assets/8d92e4fe-f339-4d93-80b7-a56c4792616a" />  
+  
+
+
+
+
 
 
 
