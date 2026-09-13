@@ -21,13 +21,13 @@
 <img width="540" height="878" alt="1 5вм" src="https://github.com/user-attachments/assets/d050dde4-18c0-4932-9e62-23cbc451a809" />  
 
 ## Задание 2
-[Модуль vpc]()  
+[Модуль vpc](https://github.com/MikhailNikitin99/TF_hw/tree/main/04/vpc)  
 ### Вывод в консоли  
 <img width="546" height="599" alt="2 задание" src="https://github.com/user-attachments/assets/6395ef7d-19e3-44f1-911a-e2fa63bd6fb8" />  
 
-### [Замена ресурсов]()  
+### [Замена ресурсов](https://github.com/MikhailNikitin99/TF_hw/blob/main/04/vpc/main.tf)  
 
-### [Документация Terraform-docs]()  
+### [Документация Terraform-docs](https://github.com/MikhailNikitin99/TF_hw/blob/main/04/doc.md)  
 
 ## Задание 3  
 ### Удалил все
@@ -38,7 +38,7 @@
 
 ## Задание 4  
 ### Сам модуль
-[vpc]()  
+[vpc](https://github.com/MikhailNikitin99/TF_hw/blob/main/04/vpc/main.tf)  
 
 ### Карта сети после terraform apply  
 <img width="1010" height="378" alt="4 задание карта" src="https://github.com/user-attachments/assets/74ecc0e4-bea6-40d9-8a53-6d7d5024be02" />  
@@ -51,7 +51,7 @@
 
 ## Задание 5 
 ### Модули
-[Кластер](), [База данных]()  
+[Кластер](https://github.com/MikhailNikitin99/TF_hw/tree/main/04/mysql_cluster), [База данных](https://github.com/MikhailNikitin99/TF_hw/tree/main/04/mysql_db)  
 
 ### Terraform apply  
 <img width="892" height="750" alt="5 1" src="https://github.com/user-attachments/assets/638c3317-b0aa-469d-8b20-62573653b17f" />  
