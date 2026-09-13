@@ -3,7 +3,8 @@
 - [Задание 3](#задание-3)  
 - [Задание 4](#задание-4)  
 - [Задание 5](#задание-5)  
-- [Задание 6](#задание-6)  
+- [Задание 6](#задание-6)
+- [Задание 7](#задание-7)  
 
 ## Задание 1  
 ### Nginx  
@@ -78,9 +79,13 @@
   
 <img width="1033" height="220" alt="6 задание бакет в клауде" src="https://github.com/user-attachments/assets/f27f6a77-d0f1-42ff-b4ec-11ffcbd55ab9" />
 
-<img width="1123" height="740" alt="7 задание" src="https://github.com/user-attachments/assets/c341bdf6-0416-4bbd-aebd-aa69a07f197c" />
-<img width="637" height="258" alt="7 задание свой пароль" src="https://github.com/user-attachments/assets/f8e37591-259a-44d8-a38d-0af305ceb198" />
-<img width="751" height="518" alt="7 задание apply" src="https://github.com/user-attachments/assets/c76f2134-4b49-4056-8fb0-e3dfc6e3f315" />
+## Задание 7
+<img width="1123" height="740" alt="7 задание" src="https://github.com/user-attachments/assets/c341bdf6-0416-4bbd-aebd-aa69a07f197c" />  
+  
+<img width="637" height="258" alt="7 задание свой пароль" src="https://github.com/user-attachments/assets/f8e37591-259a-44d8-a38d-0af305ceb198" />  
+  
+<img width="751" height="518" alt="7 задание apply" src="https://github.com/user-attachments/assets/c76f2134-4b49-4056-8fb0-e3dfc6e3f315" />  
+  
 
 
 
