@@ -17,6 +17,10 @@ variable "network_id" {
   type = string
   description = "Id to attach a cluster to"
 }
+variable "security_group" {
+  type = list(string)
+  description = "Security group for db cluster"
+}
 variable "version_db" {
   type = string
   default = "5.7"
@@ -52,8 +56,8 @@ variable "hosts" {
 #  type = list(string)
 #  description = "Subnet IDs"
 #}
-variable "disk_size_limit" {
-  type = number
-  default = 10
-  description = "Limiting the size of a disk"
-}
+# variable "disk_size_limit" {
+#   type = number
+#   default = 10
+#   description = "Limiting the size of a disk"
+# }
