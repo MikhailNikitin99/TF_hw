@@ -13,7 +13,7 @@ module "mysql_cluster" {
   source = "../mysql_cluster"
   HA = true
   network_id = module.vpc.network_id
-  security_group = tolist(module.vpc.security_group)
+  security_group = [module.vpc.security_group]
   hosts = [
     for zone, subnet_id in zipmap(module.vpc.subnet_zone, module.vpc.subnet_id) : {
       zone = zone
@@ -45,7 +45,7 @@ module "test-vm" {
  network_id     = module.vpc.network_id
  subnet_zones   = module.vpc.subnet_zone
  subnet_ids     = module.vpc.subnet_id
- security_group_ids = tolist(module.vpc.security_group)
+ security_group_ids = [module.vpc.security_group]
  instance_name  = "webs"
  instance_count = 2
  image_family   = "ubuntu-2004-lts"
@@ -68,7 +68,7 @@ module "example-vm" {
   network_id     = module.vpc.network_id
   subnet_zones   = module.vpc.subnet_zone
   subnet_ids     = module.vpc.subnet_id
-  security_group_ids = tolist(module.vpc.security_group)
+  security_group_ids = [module.vpc.security_group]
   instance_name  = "web-stage"
   instance_count = 1
   image_family   = "ubuntu-2004-lts"
