@@ -2,12 +2,15 @@ terraform {
   required_providers {
     yandex = {
       source = "yandex-cloud/yandex"
+      version = ">=0.228.0"
+    }
+    aws = {
+      source = "hashicorp/aws"
+      version = ">=6.65.0"
     }
   }
   required_version = ">1.12.0"
   backend "s3" {
-    #shared_credentials_files = ["~/.aws/credentials"]
-    #profile = "default"
     bucket = "neto-s3"
     key = "terraform.tfstate"
     region = "ru-central1"

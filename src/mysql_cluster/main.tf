@@ -2,6 +2,7 @@ terraform {
   required_providers {
     yandex = {
       source = "yandex-cloud/yandex"
+      version = ">=0.228.0"
     }
   }
   required_version = ">=1.8.4"
@@ -10,6 +11,7 @@ resource "yandex_mdb_mysql_cluster" "CreateCluster" {
   name = var.name_db
   environment = var.env_db
   network_id = var.network_id
+  security_group_ids = var.security_group
   version = var.version_db
   resources {
     resource_preset_id = var.preset_id
