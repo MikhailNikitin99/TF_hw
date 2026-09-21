@@ -13,6 +13,10 @@ variable "default_zone" {
   type        = string
   default     = "ru-central1-a"
   description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
+  validation {
+    condition = contains(["ru-central1-a","ru-central1-b","ru-central1-d","ru-central1-e","ru-central1-m"],var.default_zone)
+    error_message = "Invalid availability zone provided"
+  }
 }
 variable "default_cidr" {
   type        = list(string)
