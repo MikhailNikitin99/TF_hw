@@ -38,4 +38,32 @@
 <img width="742" height="377" alt="Разблокировка стейта принудительно" src="https://github.com/user-attachments/assets/6d9b0207-8750-4608-a6c6-d41ad9e5bb81" />
 
 ## Задание 3
-[Ссылка на PR с изменениями](https://github.com/MikhailNikitin99/TF_hw/pull/1)
+[Ссылка на PR с изменениями](https://github.com/MikhailNikitin99/TF_hw/pull/1)  
+
+## Задание 4  
+### Валидные данные  
+<img width="810" height="216" alt="Валидные данные" src="https://github.com/user-attachments/assets/1bc3999d-e10c-4565-be89-19be567d03c8" />  
+
+### Невалидные данные  
+<img width="822" height="612" alt="Невалидные данные" src="https://github.com/user-attachments/assets/b0f00bfb-e6d6-49aa-9e4a-ff27984d6eb8" />  
+
+### Сам код(с невалидными)  
+[В ветке хотфикс](https://github.com/MikhailNikitin99/TF_hw/blob/terraform-hotfix/src/4task.hcl)  
+
+## 5 Задание  
+### Нижний регистр и Горец  
+<img width="1464" height="727" alt="Нижний регистр и горец" src="https://github.com/user-attachments/assets/52dca5cc-8b94-478d-89a0-f0b7cb3d4527" />  
+
+### [Код](https://github.com/MikhailNikitin99/TF_hw/blob/terraform-hotfix/src/5task.hcl)  
+Сообразил только такую длинную строчку, ИИ потом подсказал что можно просто `!=` использовать для валидации, но я менять не стал  
+
+## 6 Задание
+Пока не могу поднять ни одну, вернусь потом к этому
+
+## 7 Задание  
+Начал делать, понял что не успею, на днях получится закончить. Пока что просто [ссылка](https://github.com/MikhailNikitin99/TF_hw/tree/terraform-hotfix/src/remote_state) на то, что есть
+
+
+
+
+
