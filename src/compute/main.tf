@@ -21,6 +21,11 @@ module "mysql_cluster" {
     }
   ]
 }
+module "s3" {
+  source = "../remote_state"
+  aws_access_key = var.aws_access_key
+  aws_secret_key = var.aws_secret_key
+}
 module "mysql_db" {
   source = "../mysql_db"
   depends_on = [module.mysql_cluster]
