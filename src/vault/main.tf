@@ -1,15 +1,16 @@
-# terraform {
-#   required_providers {
-#     yandex = {
-#       source = "yandex-cloud/yandex"
-#     }
-#   }
-#   required_version = ">=1.8.4"
-# }
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+      version = ">=0.228.0"
+    }
+  }
+  required_version = ">=1.8.4"
+}
 # provider "vault" {
 #   address = "http://127.0.0.1:8200"
 #   skip_tls_verify = true
-#   token = "education"
+#   token = var.token
 # }
 # data "vault_generic_secret" "vault_example" {
 #   path = "secret/example"
@@ -19,6 +20,6 @@
 #   name = "database/config"
 #   data_json = jsonencode({
 #     username = "Iv@n"
-#     password = "SecretnyParol"
+#     password = var.new_passcode
 #   })
 # }

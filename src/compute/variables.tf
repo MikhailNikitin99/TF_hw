@@ -13,6 +13,10 @@ variable "default_zone" {
   type        = string
   default     = "ru-central1-a"
   description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
+  validation {
+    condition = contains(["ru-central1-a","ru-central1-b","ru-central1-d","ru-central1-e","ru-central1-m"],var.default_zone)
+    error_message = "Invalid availability zone provided"
+  }
 }
 variable "default_cidr" {
   type        = list(string)
@@ -43,18 +47,18 @@ variable "vms_ssh_root_key" {
 }
 
 ###example vm_web var
-variable "vm_web_name" {
-  type        = string
-  default     = "netology-develop-platform-web"
-  description = "example vm_web_ prefix"
-}
+# variable "vm_web_name" {
+#   type        = string
+#   default     = "netology-develop-platform-web"
+#   description = "example vm_web_ prefix"
+# }
 
 ###example vm_db var
-variable "vm_db_name" {
-  type        = string
-  default     = "netology-develop-platform-db"
-  description = "example vm_db_ prefix"
-}
+# variable "vm_db_name" {
+#   type        = string
+#   default     = "netology-develop-platform-db"
+#   description = "example vm_db_ prefix"
+# }
 
 variable "MySQL_User_Password" {
   type = string

@@ -16,3 +16,6 @@ output "subnet_zone" {
 output "subnet_cidr" {
   value = [for subnet in yandex_vpc_subnet.sub : subnet.v4_cidr_blocks]
 }
+output "security_group" {
+  value = yandex_vpc_security_group.sg1.id
+}

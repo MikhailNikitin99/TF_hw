@@ -10,6 +10,3 @@
 
 # own secret vars store.
 personal.auto.tfvars
-
-#linters
-.tflint.hcl

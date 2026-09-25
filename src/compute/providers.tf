@@ -2,12 +2,11 @@ terraform {
   required_providers {
     yandex = {
       source = "yandex-cloud/yandex"
+      version = ">=0.228.0"
     }
   }
   required_version = ">1.12.0"
   backend "s3" {
-    #shared_credentials_files = ["~/.aws/credentials"]
-    #profile = "default"
     bucket = "neto-s3"
     key = "terraform.tfstate"
     region = "ru-central1"
@@ -21,14 +20,12 @@ terraform {
     skip_s3_checksum = true
   }
 }
-
 provider "yandex" {
   cloud_id  = var.cloud_id
   folder_id = var.folder_id
   service_account_key_file = file("~/.authorized_key.json")
   zone      = var.default_zone
 }
-
 provider "aws" {
   region = var.aws_region
   access_key = var.aws_access_key
