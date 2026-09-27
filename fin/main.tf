@@ -47,13 +47,14 @@ module "container_registry" {
 # Creating a vm for web app's container
 module "vm" {
   source = "./vm"
-  depends_on = [module.mysql_db]
+  depends_on = [module.mysql_db, module.container_registry]
   vm_web_name       = var.vm_name
   subnet_id     = module.vpc.subnet_id[0]
   vm_sg_ids = [module.vpc.security_group]
   vm_web_image_family   = var.vm_os_family
   vm_web_is_preemptible = var.vm_web_is_preemp
   platform_id = var.platform_id
+  service_account_id    = module.container_registry.service_account_id
   vm_resources = {
     cores = var.vm_res.cores
     memory = var.vm_res.memory
@@ -67,6 +68,13 @@ module "vm" {
   vm_metadata = {
     user-data          = templatefile("${path.module}/cloud-init.yml",{
       ssh_public_key = var.vms_ssh_root_key
+      registry_id    = module.container_registry.registry_id
+      db_host        = module.mysql_cluster.host_fqdn
+      db_port        = var.db_port
+      db_user        = module.mysql_db.db_username
+      db_password    = module.lockbox.db_password
+      db_name        = module.mysql_db.db_name
+      db_table_name  = var.db_table_name
     })
     serial-port-enable = 1
     }

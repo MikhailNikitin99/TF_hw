@@ -43,6 +43,17 @@ variable "vm_metadata" {
   type = object({
     user-data = string
     serial-port-enable = number
+    # registry_id    = string
+    # db_host        = string
+    # db_port        = number
+    # db_user        = string
+    # db_password    = string
+    # db_name        = string
+    # db_table_name  = string
   })
   description = "Metafata for vm"
+}
+variable "service_account_id" {
+  type = string
+  description = "Service Account Id"
 }
