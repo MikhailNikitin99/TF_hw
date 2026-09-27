@@ -4,12 +4,17 @@ terraform {
       source = "yandex-cloud/yandex"
       version = ">=0.228.0"
     }
+    random = {
+      source = "hashicorp/random"
+      version = ">=3.9.0"
+    }
   }
   required_version = ">1.12.0"
   backend "s3" {
     bucket = "neto-s3"
     key = "terraform.tfstate"
     region = "ru-central1"
+    profile = "default"
     use_lockfile = true
     endpoints = {
       s3 = "https://storage.yandexcloud.net"

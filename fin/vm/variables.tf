@@ -6,15 +6,18 @@ variable "vm_web_name" {
   type = string
   description = "VM's name"
 }
+variable "platform_id" {
+  type = string
+  description = "platform_id"
+}
 variable "vm_resources" {
-  type = map(object({
-    platform_id = string
+  type = object({
     cores = number
     memory = number
     core_fraction = number
     size = number
     type = string
-  }))
+  })
   description = "Resources for VM"
 }
 variable "vm_web_is_preemptible" {

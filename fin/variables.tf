@@ -26,6 +26,18 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network&subnet name"
 }
+variable "ssh_cidr" {
+  type = list(string)
+  description = "list of cidr for ssh port 22"
+}
+variable "http_cidr" {
+  type = list(string)
+  description = "list of cidr for http port 80"
+}
+variable "https_cidr" {
+  type = list(string)
+  description = "list of cidr for ssh port 443"
+}
 ###common vars
 variable "aws_region" {
   type = string
@@ -44,4 +56,32 @@ variable "vms_ssh_root_key" {
 variable "MySQL_User_Password" {
   type = string
   description = "Password for db's user"
+}
+# vars for vm configuration
+variable "vm_os_family" {
+  type = string
+  description = "OS image family"
+}
+variable "vm_name" {
+  type = string
+  description = "VM's name"
+}
+variable "platform_id" {
+  type = string
+  description = "platform_id"
+}
+variable "vm_res" {
+  type = object({
+    cores = number
+    memory = number
+    core_fraction = number
+    size = number
+    type = string
+  })
+  description = "Resources for VM"
+}
+variable "vm_web_is_preemp" {
+  type = bool
+  default = true
+  description = "Is VM stoppable or not?"
 }

@@ -4,18 +4,30 @@ terraform {
       source = "yandex-cloud/yandex"
       version = ">=0.228.0"
     }
+    random = {
+      source = "hashicorp/random"
+      version = ">=3.9.0"
+    }
   }
   required_version = ">=1.8.4"
 }
-resource "yandex_lockbox_secret" "DBPass" {
+resource "random_password" "password" {
+  length = 13
+  special = true
+}
+resource "yandex_lockbox_secret" "db_password" {
   folder_id = var.folder_id
-  name = "UserPass"
-  description = "Password for MySQL DB"
-  password_payload_specification {
-    password_key = "DBUserPasscode"
-    length = 13
+  name = var.secret_name
+  description = "Password for MySQL DB user"
+}
+resource "yandex_lockbox_secret_version" "db_password_version" {
+  secret_id = yandex_lockbox_secret.db_password.id
+  entries {
+    key = "password"
+    text_value = random_password.password.result
   }
 }
-data "yandex_lockbox_secret_version" "DBPass_entry" {
-  secret_id = yandex_lockbox_secret.DBPass.secret_id
+data "yandex_lockbox_secret_version" "db_password_data" {
+  secret_id  = yandex_lockbox_secret.db_password.id
+  version_id = yandex_lockbox_secret_version.db_password_version.id
 }

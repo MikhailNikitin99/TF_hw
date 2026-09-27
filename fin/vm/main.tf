@@ -12,17 +12,17 @@ data "yandex_compute_image" "ubuntu" {
 }
 resource "yandex_compute_instance" "web" {
   name = var.vm_web_name
-  platform_id = var.vm_resources.platform_id
+  platform_id = var.platform_id
   resources {
-    cores = var.vm_resources.web.cores
-    memory = var.vm_resources.web.memory
-    core_fraction = var.vm_resources.web.core_fraction
+    cores = var.vm_resources.cores
+    memory = var.vm_resources.memory
+    core_fraction = var.vm_resources.core_fraction
   }
   boot_disk {
     initialize_params {
       image_id = data.yandex_compute_image.ubuntu.image_id
-      size  = var.vm_resources.web.size
-      type = var.vms_resources.web.type
+      size  = var.vm_resources.size
+      type = var.vm_resources.type
     }
   }
   scheduling_policy {
@@ -30,10 +30,8 @@ resource "yandex_compute_instance" "web" {
   }
   network_interface {
     subnet_id = var.subnet_id
-    security_groups_ids = var.vm_sg_ids
+    security_group_ids = var.vm_sg_ids
   }
-  labels {
-    project = var.label
-  }
+  labels = var.vm_label
   metadata = var.vm_metadata
 }

@@ -6,6 +6,9 @@ module "vpc" {
   subnets = [
     {zone = "ru-central1-a",cidr = "10.0.1.0/24"}
   ]
+  http_cidr = var.http_cidr
+  https_cidr = var.https_cidr
+  ssh_cidr = var.ssh_cidr
 }
 # Creating MySQL Cluster for DB
 module "mysql_cluster" {
@@ -27,19 +30,29 @@ module "mysql_db" {
   cluster_id = module.mysql_cluster.cluster_id
   db_name = "Web App DB"
   username = "app"
-  password = var.MySQL_User_Password
+  password = module.lockbox.db_password
+}
+# Creating lockbox for putting db's passes into
+module "lockbox" {
+  source = "./lockbox"
+  folder_id = var.folder_id
+}
+# Creating Container Registry for Docker images
+module "container_registry" {
+  source = "./container_registry"
+  folder_id = var.folder_id
 }
 # Creating a vm for web app's container
 module "vm" {
   source = "./vm"
   depends_on = [module.mysql_db]
   vm_web_name       = var.vm_name
-  subnet_id     = module.vpc.subnet_id
+  subnet_id     = module.vpc.subnet_id[0]
   vm_sg_ids = [module.vpc.security_group]
   vm_web_image_family   = var.vm_os_family
   vm_web_is_preemptible = var.vm_web_is_preemp
+  platform_id = var.platform_id
   vm_resources = {
-    platform_id = var.vm_res.platform_id
     cores = var.vm_res.cores
     memory = var.vm_res.memory
     core_fraction = var.vm_res.core_fraction
