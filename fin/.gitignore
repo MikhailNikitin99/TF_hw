@@ -10,3 +10,15 @@
 terraform.tfvars
 yandex_fin
 yandex_fin.pub
+
+#docker & app
+.env
+venv
+env
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+app/.env

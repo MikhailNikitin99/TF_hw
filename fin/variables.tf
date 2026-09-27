@@ -85,3 +85,7 @@ variable "vm_web_is_preemp" {
   default = true
   description = "Is VM stoppable or not?"
 }
+variable "sa_name" {
+  type = string
+  description = "Name of Service Account for Container Registry"
+}

@@ -41,6 +41,8 @@ module "lockbox" {
 module "container_registry" {
   source = "./container_registry"
   folder_id = var.folder_id
+  app_path  = "${path.root}/app"
+  service_account = var.sa_name
 }
 # Creating a vm for web app's container
 module "vm" {
