@@ -11,7 +11,14 @@
 <img width="1790" height="205" alt="vm" src="https://github.com/user-attachments/assets/8da47c94-c1ae-4e18-a581-379e9dda8239" />  
   
 <img width="1125" height="376" alt="repo" src="https://github.com/user-attachments/assets/4c3b874a-f993-4837-8a3f-59afc3539c7f" />  
+
+<img width="1556" height="257" alt="lockbox" src="https://github.com/user-attachments/assets/e6563f1e-9325-4516-95ca-5d02fe3ded1b" />  
+
+<img width="973" height="465" alt="nginx_log" src="https://github.com/user-attachments/assets/52ade028-7d0f-41e4-97bb-cf77ebf6d11e" />  
+
+<img width="803" height="408" alt="reses" src="https://github.com/user-attachments/assets/02d9b3e3-2e53-4114-9893-e87aaf9761fd" />
   
+
 ## Requirements
 
 | Name | Version |
