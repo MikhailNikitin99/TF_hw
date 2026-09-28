@@ -16,4 +16,8 @@ resource "yandex_mdb_mysql_user" "CreateUser" {
   cluster_id = var.cluster_id
   name = var.username
   password = var.password
+  permission {
+    database_name = yandex_mdb_mysql_database.CreateDB.name
+    roles         = ["ALL"]
+  }
 }

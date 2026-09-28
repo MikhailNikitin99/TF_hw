@@ -30,10 +30,12 @@ resource "null_resource" "build_image" {
   }
   provisioner "local-exec" {
     command = <<-EOT
+      set -e
+      export DOCKER_BUILDKIT=1
       docker logout cr.yandex || true
       IAM_TOKEN=$(yc iam create-token --folder-id ${var.folder_id})
       echo "$IAM_TOKEN" | docker login --username iam --password-stdin cr.yandex
-      docker build --no-cache --provenance=false -t cr.yandex/${yandex_container_repository.fin-neto-repository.name}/web-app:latest ${var.app_path}
+      docker build --provenance=false --sbom=false --no-cache -t cr.yandex/${yandex_container_repository.fin-neto-repository.name}/web-app:latest ${var.app_path}
       docker push cr.yandex/${yandex_container_repository.fin-neto-repository.name}/web-app:latest
       docker rmi cr.yandex/${yandex_container_repository.fin-neto-repository.name}/web-app:latest || true
     EOT

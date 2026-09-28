@@ -38,6 +38,24 @@ resource "yandex_vpc_security_group" "sg1"{
     v4_cidr_blocks = ["0.0.0.0/0"]
   }
 }
+resource "yandex_vpc_security_group" "mysql_sg" {
+  name        = "mysql-sg"
+  description = "Security group for MySQL cluster"
+  network_id  = yandex_vpc_network.web_app_network.id # ID вашей сети
+  ingress {
+    description    = "Allow MySQL from VM"
+    protocol       = "TCP"
+    port           = 3306
+    security_group_id = yandex_vpc_security_group.sg1.id
+  }
+  egress {
+    description    = "Allow all outbound"
+    protocol       = "ANY"
+    from_port      = 0
+    to_port        = 65535
+    v4_cidr_blocks = ["0.0.0.0/0"]
+  }
+}
 resource "yandex_vpc_subnet" "sub" {
   for_each = { for s in var.subnets : s.zone => s}
   name = "${yandex_vpc_network.web_app_network.name}-subnet-${each.value.zone}"

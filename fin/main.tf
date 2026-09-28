@@ -15,7 +15,7 @@ module "mysql_cluster" {
   source = "./mysql_cluster"
   HA = false
   network_id = module.vpc.network_id
-  security_group = [module.vpc.security_group]
+  security_group = [module.vpc.mysql_security_group]
   hosts = [
     for zone, subnet_id in zipmap(module.vpc.subnet_zone, module.vpc.subnet_id) : {
       zone = zone
@@ -67,16 +67,16 @@ module "vm" {
     project = "web-application"
     }
   vm_metadata = {
-    registry_id    = module.container_registry.registry_id
-    repository_name = module.container_registry.repository_name
-    image_tag = var.image_tag
-    db_host        = module.mysql_cluster.host_fqdn
-    db_port        = var.db_port
-    db_user        = module.mysql_db.db_username
-    db_password    = module.lockbox.db_password
-    db_name        = module.mysql_db.db_name
-    db_table_name  = var.db_table_name
-    user-data          = templatefile("${path.module}/cloud-init.yml",{
+    # registry_id    = module.container_registry.registry_id
+    # repository_name = module.container_registry.repository_name
+    # image_tag = var.image_tag
+    # db_host        = module.mysql_cluster.host_fqdn
+    # db_port        = var.db_port
+    # db_user        = module.mysql_db.db_username
+    # db_password    = module.lockbox.db_password
+    # db_name        = module.mysql_db.db_name
+    # db_table_name  = var.db_table_name
+    user-data          = templatefile("${path.module}/cloud-init.yml.tpl",{
       ssh_public_key = var.vms_ssh_root_key
       registry_id    = module.container_registry.registry_id
       repository_name = module.container_registry.repository_name
@@ -87,12 +87,6 @@ module "vm" {
       db_password    = module.lockbox.db_password
       db_name        = module.mysql_db.db_name
       db_table_name  = var.db_table_name
-      compose_file_content = templatefile("${var.app_path}/compose.yaml",{
-        registry_id    = module.container_registry.registry_id
-        repository_name = module.container_registry.repository_name
-      })
-      nginx_config = file("${var.app_path}/nginx/ingress/nginx.conf")
-      nginx_default_config = file("${var.app_path}/nginx/ingress/default.conf")
     })
     serial-port-enable = 1
     }

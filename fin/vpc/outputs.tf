@@ -13,3 +13,6 @@ output "subnet_cidr" {
 output "security_group" {
   value = yandex_vpc_security_group.sg1.id
 }
+output "mysql_security_group" {
+  value = yandex_vpc_security_group.mysql_sg.id
+}
