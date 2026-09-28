@@ -2,7 +2,7 @@
 # Creating network, subnets and security group
 module "vpc" {
   source = "./vpc"
-  env_name = "Web App Net"
+  env_name = "App-Network"
   subnets = [
     {zone = "ru-central1-a",cidr = "10.0.1.0/24"}
   ]
@@ -28,7 +28,7 @@ module "mysql_db" {
   source = "./mysql_db"
   depends_on = [module.mysql_cluster]
   cluster_id = module.mysql_cluster.cluster_id
-  db_name = "Web App DB"
+  db_name = "Web_App_DB"
   username = "app"
   password = module.lockbox.db_password
 }
@@ -50,6 +50,7 @@ module "vm" {
   depends_on = [module.mysql_db, module.container_registry]
   vm_web_name       = var.vm_name
   subnet_id     = module.vpc.subnet_id[0]
+  vm_nat = var.nat
   vm_sg_ids = [module.vpc.security_group]
   vm_web_image_family   = var.vm_os_family
   vm_web_is_preemptible = var.vm_web_is_preemp
@@ -63,18 +64,35 @@ module "vm" {
     type = var.vm_res.type
   }
   vm_label = {
-    project = "Web Application"
+    project = "web-application"
     }
   vm_metadata = {
+    registry_id    = module.container_registry.registry_id
+    repository_name = module.container_registry.repository_name
+    image_tag = var.image_tag
+    db_host        = module.mysql_cluster.host_fqdn
+    db_port        = var.db_port
+    db_user        = module.mysql_db.db_username
+    db_password    = module.lockbox.db_password
+    db_name        = module.mysql_db.db_name
+    db_table_name  = var.db_table_name
     user-data          = templatefile("${path.module}/cloud-init.yml",{
       ssh_public_key = var.vms_ssh_root_key
       registry_id    = module.container_registry.registry_id
+      repository_name = module.container_registry.repository_name
+      image_tag = var.image_tag
       db_host        = module.mysql_cluster.host_fqdn
       db_port        = var.db_port
       db_user        = module.mysql_db.db_username
       db_password    = module.lockbox.db_password
       db_name        = module.mysql_db.db_name
       db_table_name  = var.db_table_name
+      compose_file_content = templatefile("${var.app_path}/compose.yaml",{
+        registry_id    = module.container_registry.registry_id
+        repository_name = module.container_registry.repository_name
+      })
+      nginx_config = file("${var.app_path}/nginx/ingress/nginx.conf")
+      nginx_default_config = file("${var.app_path}/nginx/ingress/default.conf")
     })
     serial-port-enable = 1
     }

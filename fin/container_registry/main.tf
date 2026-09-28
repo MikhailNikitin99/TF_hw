@@ -26,23 +26,26 @@ resource "null_resource" "build_image" {
     dockerfile_hash = filemd5("${var.app_path}/Dockerfile")
     main_py_hash    = filemd5("${var.app_path}/main.py")
     requirements_hash = filemd5("${var.app_path}/requirements.txt")
+    repository_id = yandex_container_repository.fin-neto-repository.id
   }
   provisioner "local-exec" {
     command = <<-EOT
-      IAM_TOKEN=$(yc iam create-token)
+      docker logout cr.yandex || true
+      IAM_TOKEN=$(yc iam create-token --folder-id ${var.folder_id})
       echo "$IAM_TOKEN" | docker login --username iam --password-stdin cr.yandex
-      docker build -t cr.yandex/${yandex_container_registry.fin-neto-registry.id}/web-app:latest ${path.module}/app
-      docker push cr.yandex/${yandex_container_registry.fin-neto-registry.id}/web-app:latest
+      docker build --no-cache --provenance=false -t cr.yandex/${yandex_container_repository.fin-neto-repository.name}/web-app:latest ${var.app_path}
+      docker push cr.yandex/${yandex_container_repository.fin-neto-repository.name}/web-app:latest
+      docker rmi cr.yandex/${yandex_container_repository.fin-neto-repository.name}/web-app:latest || true
     EOT
   }
-  depends_on = [yandex_container_repository.fin-neto-repository]
+  depends_on = [yandex_container_registry.fin-neto-registry,yandex_container_repository.fin-neto-repository]
 }
-resource "yandex_iam_service_account" "vm_sa" {
+data "yandex_iam_service_account" "vm_sa" {
   name      = var.service_account
   folder_id = var.folder_id
 }
 resource "yandex_resourcemanager_folder_iam_member" "vm_sa_puller" {
   folder_id = var.folder_id
   role      = "container-registry.images.puller"
-  member    = "serviceAccount:${yandex_iam_service_account.vm_sa.id}"
+  member    = "serviceAccount:${data.yandex_iam_service_account.vm_sa.id}"
 }

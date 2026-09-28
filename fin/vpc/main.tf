@@ -11,7 +11,7 @@ resource "yandex_vpc_network" "web_app_network" {
   name = var.env_name
 }
 resource "yandex_vpc_security_group" "sg1"{
-  name = "Security Group 1"
+  name = "Security_Group_1"
   description = "Security group for vpc and other modules"
   network_id = yandex_vpc_network.web_app_network.id
   ingress {

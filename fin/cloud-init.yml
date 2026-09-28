@@ -10,11 +10,31 @@ package_update: true
 package_upgrade: false
 packages:
   - nano
-  - nginx
   - ca-certificates
   - curl
   - gnupg
   - lsb-release
+  - jq
+write_files:
+  - path: /app/.env
+    permissions: "0600"
+    content: |
+        DB_HOST=${db_host}
+        DB_NAME=${db_name}
+        DB_USER=${db_user}
+        DB_PASSWORD=${db_password}
+  - path: /app/compose.yaml
+    permissions: "0644"
+    content: |
+        ${compose_file_content}
+  - path: /app/nginx/ingress/nginx.conf
+    permissions: "0644"
+    content: |
+        ${nginx_config}
+  - path: /app/nginx/ingress/default.conf
+    permissions: "0644"
+    content: |
+        ${nginx_default_config}
 runcmd:
   - install -m 0755 -d /etc/apt/keyrings
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
@@ -22,5 +42,7 @@ runcmd:
   - echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
   - apt-get update
   - apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-  - systemctl enable docker
-  - systemctl start docker
+  - systemctl enable --now docker
+  - TOKEN=$(curl -s -H "Metadata-Flavor: Google" http://169.254.169.254 | jq -r '.access_token') && echo "$TOKEN" | docker login --username iam --password-stdin cr.yandex
+  - docker pull cr.yandex/${registry_id}/${repository_name}:latest
+  - cd /app && docker compose up -d

@@ -1,6 +1,6 @@
 services:
   web:
-    image: cr.yandex/_Вставить_айди_реестра/web-app:latest
+    image: cr.yandex/\${registry_id}/\${repository_name}/web-app:latest
     env_file:
       - .env
     restart: on-failure

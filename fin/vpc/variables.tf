@@ -1,6 +1,6 @@
 variable "env_name" {
   type = string
-  default = "Web app's network"
+  default = "web_app_network"
   description = "Network's name"
 }
 variable "subnets" {

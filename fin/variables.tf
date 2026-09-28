@@ -90,22 +90,36 @@ variable "sa_name" {
   description = "Name of Service Account for Container Registry"
 }
 #cloud-init env group
-variable "db_host"         {
-  type = string
-}
-variable "db_name"         {
-  type = string
-}
-variable "db_username"         {
-  type = string
-}
-variable "db_password"     {
-  type = string
-  sensitive = true
-}
+# variable "db_host"         {
+#   type = string
+# }
+# variable "db_name"         {
+#   type = string
+# }
+# variable "db_username"         {
+#   type = string
+# }
+# variable "db_password"     {
+#   type = string
+#   sensitive = true
+# }
 variable "db_table_name"   {
   type = string
 }
 variable "db_port"   {
   type = number
+  default = 3306
+}
+variable "image_tag" {
+  type = string
+  default = "latest"
+  description = "tag of Docker image"
+}
+variable "app_path" {
+  type = string
+  description = "path to app foulder"
+}
+variable "nat" {
+  type = bool
+  description = "VM's NAT"
 }

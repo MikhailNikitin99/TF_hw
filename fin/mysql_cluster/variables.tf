@@ -5,7 +5,7 @@ variable "HA" {
 }
 variable "name_db" {
   type = string
-  default = "DB cluster for MySQL"
+  default = "mysql_cluster"
   description = "Cluster's name"
 }
 variable "env_db" {

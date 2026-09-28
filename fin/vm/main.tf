@@ -31,6 +31,7 @@ resource "yandex_compute_instance" "web" {
   network_interface {
     subnet_id = var.subnet_id
     security_group_ids = var.vm_sg_ids
+    nat = var.vm_nat
   }
   labels = var.vm_label
   metadata = var.vm_metadata
