@@ -34,6 +34,12 @@ write_files:
           restart: on-failure
           networks:
             - app-network
+          healthcheck:
+            test: ["CMD", "wget","--no-verbose","--tries=1","--spider","http://localhost:5000/"]
+            interval: 30s
+            timeout: 5s
+            star_period: 10s
+            retries: 3
         nginx:
           image: nginx:latest
           restart: on-failure
@@ -44,7 +50,8 @@ write_files:
             - ./nginx/ingress/nginx.conf:/etc/nginx/nginx.conf:rw
             - ./nginx/ingress/default.conf:/etc/nginx/conf.d/default.conf:rw
           depends_on:
-            - web
+            web:
+              condition: service_healthy
           networks:
             - app-network
 

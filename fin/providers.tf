@@ -9,8 +9,8 @@ terraform {
       version = ">=3.9.0"
     }
     aws = {
-      source = "hasicorp/aws"
-      version = ">=6.6.0"
+      source = "hashicorp/aws"
+      version = ">=6.9.0"
     }
   }
   required_version = ">1.12.0"

@@ -4,7 +4,7 @@ module "vpc" {
   source = "./vpc"
   env_name = "App-Network"
   subnets = [
-    {zone = var.default_zone,cidr = var.default_cidr}
+    {zone = var.default_zone,cidr = one(var.default_cidr)}
   ]
   http_cidr = var.http_cidr
   https_cidr = var.https_cidr
