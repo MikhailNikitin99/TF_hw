@@ -21,11 +21,6 @@ variable "default_cidr" {
   default     = ["10.0.1.0/24"]
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
-variable "vpc_name" {
-  type        = string
-  default     = "develop"
-  description = "VPC network&subnet name"
-}
 variable "ssh_cidr" {
   type = list(string)
   description = "list of cidr for ssh port 22"
@@ -53,10 +48,6 @@ variable "vms_ssh_root_key" {
   default     = "your_ssh_ed25519_key"
   description = "ssh-keygen -t ed25519"
 }
-variable "MySQL_User_Password" {
-  type = string
-  description = "Password for db's user"
-}
 # vars for vm configuration
 variable "vm_os_family" {
   type = string
@@ -80,6 +71,10 @@ variable "vm_res" {
   })
   description = "Resources for VM"
 }
+variable "vm_project_label" {
+  type = string
+  description = "label for vm"
+}
 variable "vm_web_is_preemp" {
   type = bool
   default = true
@@ -89,20 +84,6 @@ variable "sa_name" {
   type = string
   description = "Name of Service Account for Container Registry"
 }
-#cloud-init env group
-# variable "db_host"         {
-#   type = string
-# }
-# variable "db_name"         {
-#   type = string
-# }
-# variable "db_username"         {
-#   type = string
-# }
-# variable "db_password"     {
-#   type = string
-#   sensitive = true
-# }
 variable "db_table_name"   {
   type = string
 }
@@ -110,14 +91,14 @@ variable "db_port"   {
   type = number
   default = 3306
 }
+variable "db_user" {
+  type = string
+  description = "DB's User"
+}
 variable "image_tag" {
   type = string
   default = "latest"
   description = "tag of Docker image"
-}
-variable "app_path" {
-  type = string
-  description = "path to app foulder"
 }
 variable "nat" {
   type = bool

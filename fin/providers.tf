@@ -8,6 +8,10 @@ terraform {
       source = "hashicorp/random"
       version = ">=3.9.0"
     }
+    aws = {
+      source = "hasicorp/aws"
+      version = ">=6.6.0"
+    }
   }
   required_version = ">1.12.0"
   backend "s3" {

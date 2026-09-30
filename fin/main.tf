@@ -4,7 +4,7 @@ module "vpc" {
   source = "./vpc"
   env_name = "App-Network"
   subnets = [
-    {zone = "ru-central1-a",cidr = "10.0.1.0/24"}
+    {zone = var.default_zone,cidr = var.default_cidr}
   ]
   http_cidr = var.http_cidr
   https_cidr = var.https_cidr
@@ -28,8 +28,8 @@ module "mysql_db" {
   source = "./mysql_db"
   depends_on = [module.mysql_cluster]
   cluster_id = module.mysql_cluster.cluster_id
-  db_name = "Web_App_DB"
-  username = "app"
+  db_name = var.db_table_name
+  username = var.db_user
   password = module.lockbox.db_password
 }
 # Creating lockbox for putting db's passes into
@@ -64,18 +64,9 @@ module "vm" {
     type = var.vm_res.type
   }
   vm_label = {
-    project = "web-application"
+    project = var.vm_project_label
     }
   vm_metadata = {
-    # registry_id    = module.container_registry.registry_id
-    # repository_name = module.container_registry.repository_name
-    # image_tag = var.image_tag
-    # db_host        = module.mysql_cluster.host_fqdn
-    # db_port        = var.db_port
-    # db_user        = module.mysql_db.db_username
-    # db_password    = module.lockbox.db_password
-    # db_name        = module.mysql_db.db_name
-    # db_table_name  = var.db_table_name
     user-data          = templatefile("${path.module}/cloud-init.yml.tpl",{
       ssh_public_key = var.vms_ssh_root_key
       registry_id    = module.container_registry.registry_id
