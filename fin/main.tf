@@ -36,6 +36,8 @@ module "mysql_db" {
 module "lockbox" {
   source = "./lockbox"
   folder_id = var.folder_id
+  use_special_pass = var.lockbox_use_special_pass
+  password_length = var.lockbox_password_length
 }
 # Creating Container Registry for Docker images
 module "container_registry" {

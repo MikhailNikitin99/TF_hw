@@ -104,3 +104,11 @@ variable "nat" {
   type = bool
   description = "VM's NAT"
 }
+variable "lockbox_use_special_pass" {
+  type        = bool
+  description = "Allow special keys in password"
+}
+variable "lockbox_password_length" {
+  type        = number
+  description = "Password length"
+}

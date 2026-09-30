@@ -12,8 +12,8 @@ terraform {
   required_version = ">=1.8.4"
 }
 resource "random_password" "password" {
-  length = 13
-  special = true
+  length = var.password_length
+  special = var.use_special_pass
 }
 resource "yandex_lockbox_secret" "db_password" {
   folder_id = var.folder_id
